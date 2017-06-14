@@ -2,11 +2,15 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "format": "find ./components ./pages -name '*.js' -type f | xargs prettier --write --single-quote --trailing-comma es5"
   },
   "dependencies": {
     "next": "^2.4.3",
     "react": "^15.6.0",
     "react-dom": "^15.6.0"
+  },
+  "devDependencies": {
+    "prettier": "^1.4.4"
   }
 }
