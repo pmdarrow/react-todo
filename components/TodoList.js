@@ -4,61 +4,32 @@ import TodoItem from './TodoItem';
 export default class extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      todos: [
-        {
-          id: 0,
-          value: 'foo',
-          completed: false,
-        },
-        {
-          id: 1,
-          value: 'bar',
-          completed: false,
-        },
-        {
-          id: 2,
-          value: 'baz',
-          completed: false,
-        },
-      ],
-    };
-  }
-
-  handleItemDelete(id) {
-    this.setState({
-      todos: this.state.todos.filter(item => item.id !== id),
-    });
-  }
-
-  handleItemSubmit(id) {
-    // If the user has pressed enter on the last TodoItem, create a new one
-    let lastItem = this.state.todos[this.state.todos.length - 1];
-    if (lastItem.id === id && lastItem.value !== '') {
-      this.setState({
-        todos: this.state.todos.concat({
-          id: lastItem.id + 1,
-          value: '',
-          completed: false,
-        }),
-      });
-    }
+    // TODO: Figure our the right way to initialize the todo list with an empty item
+    props.onAddTodo();
   }
 
   render() {
     return (
-      <ul>
-        <For each="item" of={this.state.todos}>
-          <TodoItem
-            key={item.id}
-            id={item.id}
-            value={item.value}
-            completed={item.completed}
-            onDelete={this.handleItemDelete.bind(this)}
-            onSubmit={this.handleItemSubmit.bind(this)}
-          />
-        </For>
-      </ul>
+      <div>
+        <ul>
+          <For each="item" of={this.props.todos}>
+            <TodoItem
+              key={item.id}
+              id={item.id}
+              value={item.value}
+              completed={item.completed}
+              onEdit={this.props.onEditTodo}
+              onDelete={this.props.onDeleteTodo}
+              onToggle={this.props.onToggleTodo}
+              onSubmit={this.props.onAddTodo}
+            />
+          </For>
+        </ul>
+        <span>
+          {this.props.todos.length}{' '}
+          todo{this.props.todos.length > 1 ? 's' : ''}
+        </span>
+      </div>
     );
   }
 }

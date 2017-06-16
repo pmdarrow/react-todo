@@ -6,10 +6,13 @@
     "format": "find . -type f -name '*.js' -not -path './node_modules/*' -not -path './.next/*' -not -path './.git/' | xargs prettier --write --single-quote --trailing-comma es5"
   },
   "dependencies": {
+    "immutability-helper": "^2.2.2",
     "jsx-control-statements": "^3.2.5",
     "next": "^2.4.3",
     "react": "^15.6.0",
-    "react-dom": "^15.6.0"
+    "react-dom": "^15.6.0",
+    "react-redux": "^5.0.5",
+    "redux": "^3.6.0",
   },
   "devDependencies": {
     "prettier": "^1.4.4"

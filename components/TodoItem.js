@@ -1,36 +1,23 @@
 import React from 'react';
 
 export default class extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      new: false,
-      editing: false,
-      value: props.value || '',
-      completed: props.completed,
-    };
-  }
+  state = {
+    editing: false,
+  };
 
   handleEditClick() {
-    this.setState({
-      editing: true,
-    });
+    this.setState({ editing: true });
   }
 
   handleValueChange(event) {
-    this.setState({
-      value: event.target.value,
-    });
+    this.props.onEdit(this.props.id, event.target.value);
   }
 
   handleValueBlur() {
-    this.setState({
-      editing: false,
-    });
+    this.setState({ editing: false });
   }
 
   handleValueKeyPress(event) {
-    console.log(event.key);
     if (event.key === 'Enter') {
       this.props.onSubmit(this.props.id);
     }
@@ -41,6 +28,7 @@ export default class extends React.Component {
       editing: false,
       completed: event.target.checked,
     });
+    this.props.onToggle(this.props.id);
   }
 
   handleDeleteClick() {
@@ -55,8 +43,8 @@ export default class extends React.Component {
         <input
           autoFocus
           type="text"
-          className={this.state.completed ? 'completed' : ''}
-          value={this.state.value}
+          className={this.props.completed ? 'completed' : ''}
+          value={this.props.value}
           onChange={this.handleValueChange.bind(this)}
           onBlur={this.handleValueBlur.bind(this)}
           onKeyPress={this.handleValueKeyPress.bind(this)}
