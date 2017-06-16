@@ -3,7 +3,7 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "format": "find ./components ./pages -name '*.js' -type f | xargs prettier --write --single-quote --trailing-comma es5"
+    "format": "find . -type f -name '*.js' -not -path './node_modules/*' -not -path './.next/*' -not -path './.git/' | xargs prettier --write --single-quote --trailing-comma es5"
   },
   "dependencies": {
     "jsx-control-statements": "^3.2.5",
