@@ -36,7 +36,7 @@ export default class extends React.Component {
     }
   }
 
-  handleCompleteChange(event) {
+  handleToggleChange(event) {
     this.setState({
       editing: false,
       completed: event.target.checked,
@@ -50,17 +50,7 @@ export default class extends React.Component {
   render() {
     return (
       <li onClick={this.handleEditClick.bind(this)}>
-        <Choose>
-          <When condition={this.state.new}>
-            +
-          </When>
-          <Otherwise>
-            <input
-              type="checkbox"
-              onChange={this.handleCompleteChange.bind(this)}
-            />
-          </Otherwise>
-        </Choose>
+        <input type="checkbox" onChange={this.handleToggleChange.bind(this)} />
 
         <input
           autoFocus
