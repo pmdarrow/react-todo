@@ -29,6 +29,14 @@ export default class extends React.Component {
           {this.props.todos.length}{' '}
           todo{this.props.todos.length > 1 ? 's' : ''}
         </span>
+
+        <style jsx>{`
+          ul {
+            list-style: none;
+            padding-left: 0;
+          }
+        `}
+        </style>
       </div>
     );
   }
