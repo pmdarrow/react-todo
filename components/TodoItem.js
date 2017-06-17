@@ -52,7 +52,7 @@ export default class extends React.Component {
 
         <button onClick={this.handleDeleteClick.bind(this)}>X</button>
 
-        <style>{`
+        <style jsx>{`
           li button {
             display: none;
           }
