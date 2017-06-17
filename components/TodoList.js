@@ -2,12 +2,6 @@ import React from 'react';
 import TodoItem from './TodoItem';
 
 export default class extends React.Component {
-  constructor(props) {
-    super(props);
-    // TODO: Figure our the right way to initialize the todo list with an empty item
-    props.onAddTodo();
-  }
-
   render() {
     return (
       <div>

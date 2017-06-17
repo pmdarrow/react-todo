@@ -6,11 +6,17 @@ import {
 } from '../constants/actionTypes';
 import update from 'immutability-helper';
 
+let initialState = [{
+  id: 0,
+  value: '',
+  completed: false,
+}];
+
 function getIndex(todos, todo) {
   return todos.findIndex(item => item.id === todo.id);
 }
 
-export default function(state = [], action) {
+export default function(state = initialState, action) {
   switch (action.type) {
     case ADD_TODO:
       // Only add a todo if there are none or the last one isn't empty

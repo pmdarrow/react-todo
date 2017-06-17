@@ -5,7 +5,7 @@ import {
   TOGGLE_TODO,
 } from '../constants/actionTypes';
 
-let nextId = 0;
+let nextId = 1;
 
 export function addTodo() {
   return {
