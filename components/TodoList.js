@@ -14,7 +14,6 @@ export default class extends React.Component {
               completed={item.completed}
               onEdit={this.props.onEditTodo}
               onDelete={this.props.onDeleteTodo}
-              onToggle={this.props.onToggleTodo}
               onSubmit={this.props.onAddTodo}
             />
           </For>

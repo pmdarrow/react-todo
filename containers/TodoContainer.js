@@ -19,7 +19,6 @@ function mapDispatchToProps(dispatch) {
       dispatch(editTodo({ id, value }));
     },
     onDeleteTodo: id => dispatch(deleteTodo({ id })),
-    onToggleTodo: id => dispatch(toggleTodo({ id })),
   };
 }
 

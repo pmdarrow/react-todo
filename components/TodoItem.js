@@ -10,7 +10,7 @@ export default class extends React.Component {
   }
 
   handleValueChange(event) {
-    this.props.onEdit(this.props.id, event.target.value);
+    this.props.onEdit(this.props.id, event.target.value, this.props.completed);
   }
 
   handleValueBlur() {
@@ -24,11 +24,8 @@ export default class extends React.Component {
   }
 
   handleToggleChange(event) {
-    this.setState({
-      editing: false,
-      completed: event.target.checked,
-    });
-    this.props.onToggle(this.props.id);
+    this.setState({ editing: false });
+    this.props.onEdit(this.props.id, this.props.value, event.target.checked);
   }
 
   handleDeleteClick() {
