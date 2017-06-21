@@ -29,8 +29,7 @@ export default class extends React.Component {
             list-style: none;
             padding-left: 0;
           }
-        `}
-        </style>
+        `}</style>
       </div>
     );
   }

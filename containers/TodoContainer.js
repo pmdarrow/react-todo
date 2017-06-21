@@ -15,9 +15,11 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return {
     onAddTodo: () => dispatch(addTodo()),
-    onEditTodo: (id, value) => {dispatch(editTodo({id, value}))},
-    onDeleteTodo: id => dispatch(deleteTodo({id})),
-    onToggleTodo: id => dispatch(toggleTodo({id})),
+    onEditTodo: (id, value) => {
+      dispatch(editTodo({ id, value }));
+    },
+    onDeleteTodo: id => dispatch(deleteTodo({ id })),
+    onToggleTodo: id => dispatch(toggleTodo({ id })),
   };
 }
 
