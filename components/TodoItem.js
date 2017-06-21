@@ -43,6 +43,7 @@ export default class extends React.Component {
         <input
           autoFocus
           type="text"
+          placeholder="Enter a todo"
           className={this.props.completed ? 'completed' : ''}
           value={this.props.value}
           onChange={this.handleValueChange.bind(this)}
