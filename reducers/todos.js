@@ -12,8 +12,8 @@ let initialState = [{
   completed: false,
 }];
 
-function getIndex(todos, todo) {
-  return todos.findIndex(item => item.id === todo.id);
+function getIndex(state, action) {
+  return state.findIndex(item => item.id === action.payload.id);
 }
 
 export default function(state = initialState, action) {
@@ -24,7 +24,7 @@ export default function(state = initialState, action) {
         return update(state, {
           $push: [
             {
-              id: action.id,
+              id: action.payload.id,
               value: '',
               completed: false,
             },
@@ -38,7 +38,7 @@ export default function(state = initialState, action) {
         // TODO: May be simpler to use map() instead of immutability-helper
         [getIndex(state, action)]: {
           value: {
-            $set: action.value,
+            $set: action.payload.value,
           },
         },
       });

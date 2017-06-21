@@ -4,34 +4,11 @@ import {
   DELETE_TODO,
   TOGGLE_TODO,
 } from '../constants/actionTypes';
+import { createAction } from 'redux-actions';
 
 let nextId = 1;
 
-export function addTodo() {
-  return {
-    type: ADD_TODO,
-    id: nextId++,
-  };
-}
-
-export function editTodo(id, value) {
-  return {
-    type: EDIT_TODO,
-    id,
-    value,
-  };
-}
-
-export function deleteTodo(id) {
-  return {
-    type: DELETE_TODO,
-    id,
-  };
-}
-
-export function toggleTodo(id) {
-  return {
-    type: TOGGLE_TODO,
-    id,
-  };
-}
+export const addTodo = createAction(ADD_TODO, () => ({id: nextId++}));
+export const editTodo = createAction(EDIT_TODO);
+export const deleteTodo = createAction(DELETE_TODO);
+export const toggleTodo = createAction(TOGGLE_TODO);
