@@ -6,6 +6,7 @@
     "format": "find . -type f -name '*.js' -not -path './node_modules/*' -not -path './.next/*' -not -path './.git/' | xargs prettier --write --single-quote --trailing-comma es5"
   },
   "dependencies": {
+    "firebase": "^4.1.2",
     "immutability-helper": "^2.2.2",
     "jsx-control-statements": "^3.2.5",
     "next": "^2.4.3",
@@ -13,7 +14,8 @@
     "react-dom": "^15.6.0",
     "react-redux": "^5.0.5",
     "redux": "^3.6.0",
-    "redux-actions": "^2.0.3"
+    "redux-actions": "^2.0.3",
+    "redux-saga": "^0.15.3"
   },
   "devDependencies": {
     "prettier": "^1.4.4"

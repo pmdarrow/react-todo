@@ -1,5 +1,9 @@
 import { connect } from 'react-redux';
-import { addTodo, editTodo, deleteTodo, toggleTodo } from '../actions/todos';
+import {
+  addTodoRequested,
+  editTodoRequested,
+  deleteTodoRequested,
+} from '../actions/todos';
 import TodoList from '../components/TodoList';
 
 // Transforms the current Redux store state into the props passed to the
@@ -14,11 +18,11 @@ function mapStateToProps(state) {
 // inject into the TodoList presentational component
 function mapDispatchToProps(dispatch) {
   return {
-    onAddTodo: () => dispatch(addTodo()),
-    onEditTodo: (id, value) => {
-      dispatch(editTodo({ id, value }));
+    onAddTodo: () => dispatch(addTodoRequested()),
+    onEditTodo: (id, value, completed) => {
+      dispatch(editTodoRequested({ id, value, completed }));
     },
-    onDeleteTodo: id => dispatch(deleteTodo({ id })),
+    onDeleteTodo: id => dispatch(deleteTodoRequested({ id })),
   };
 }
 
