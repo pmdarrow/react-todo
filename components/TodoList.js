@@ -5,6 +5,7 @@ export default class extends React.Component {
   render() {
     return (
       <div>
+        <button onClick={this.props.onAddTodo}>Add Todo</button>
         <ul>
           <For each="item" of={this.props.todos}>
             <TodoItem
