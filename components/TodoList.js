@@ -21,7 +21,7 @@ export default class extends React.Component {
         </ul>
         <span>
           {this.props.todos.length}{' '}
-          todo{this.props.todos.length > 1 ? 's' : ''}
+          todo{this.props.todos.length === 1 ? '' : 's'}
         </span>
 
         <style jsx>{`
