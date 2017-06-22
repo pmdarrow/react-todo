@@ -35,7 +35,11 @@ export default class extends React.Component {
   render() {
     return (
       <li onClick={this.handleEditClick.bind(this)}>
-        <input type="checkbox" onChange={this.handleToggleChange.bind(this)} />
+        <input
+          type="checkbox"
+          checked={this.props.completed}
+          onChange={this.handleToggleChange.bind(this)}
+        />
 
         <input
           autoFocus
