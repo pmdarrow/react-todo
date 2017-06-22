@@ -23,6 +23,12 @@ yarn dev
 
 Open browser at http://localhost:3000
 
+## Run tests
+
+```
+yarn test
+```
+
 ## Build & run for production
 
 Build app:

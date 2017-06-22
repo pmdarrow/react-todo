@@ -22,7 +22,7 @@ class Api {
     return this.database.ref('todos').push({
       value: '',
       completed: false,
-    });
+    }).key;
   }
 
   editTodo(id, value, completed) {

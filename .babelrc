@@ -1,5 +1,6 @@
 {
   "presets": [
+    ["env", { "modules": "commonjs" }],
     "next/babel",
   ],
   "plugins": ["jsx-control-statements"]

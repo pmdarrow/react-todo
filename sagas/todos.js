@@ -19,8 +19,8 @@ import api from '../services/api';
 
 export function* addTodo(action) {
   try {
-    let data = yield call([api, api.addTodo]);
-    yield put(addTodoSucceeded({ id: data.key }));
+    let key = yield call([api, api.addTodo]);
+    yield put(addTodoSucceeded({ id: key }));
   } catch (error) {
     yield put(addTodoFailed(error));
   }
