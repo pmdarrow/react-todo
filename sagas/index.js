@@ -8,8 +8,6 @@ import {
 } from './todos';
 
 export default function* rootSaga() {
-  // Load initial data
-  yield call(fetchTodos);
   yield all([
     watchAddTodo(),
     watchEditTodo(),
